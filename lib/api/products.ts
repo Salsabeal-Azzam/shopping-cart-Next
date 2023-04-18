@@ -12,12 +12,10 @@ export type Product = {
 };
 
 export type Products = Product[];
-let productsAll: Product[];
 
 export async function getAllProducts(): Promise<Products> {
   const res = await fetch('https://fakestoreapi.com/products');
   const data = (await res.json()) as Products;
-  productsAll = data;
   return data;
 }
 
@@ -39,9 +37,11 @@ export async function getAllProductsId(): Promise<ProductsParams> {
     }
   }));
 }
-async function isInDb(id: string){
+async function isInDb(id: string):Promise<Product | undefined>{
   const res = await getAllProducts();
-  return  res.find(product => product.id == +id);
+  const result = res.find(product => product.id == +id);
+  return result;
+
 }
 
 export async function getProductData(id: string): Promise<Product | null> {
@@ -49,10 +49,8 @@ export async function getProductData(id: string): Promise<Product | null> {
 
   const test = await isInDb(id);
   console.log(test);
-  if (!test) {
-    return null
-  }  
+  if (!test)return null  
   const res = await fetch(`https://fakestoreapi.com/products/${id}`);
   const data = (await res.json()) as Product;
-  return data;
+  return data
 }

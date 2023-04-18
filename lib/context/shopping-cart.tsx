@@ -53,7 +53,7 @@ export function ShoppingCartProvider({
   const handleProductQuantity =
     (productId: number, type?: 'increment' | 'decrement') =>
     (e?: ChangeEvent<HTMLInputElement>): void => {
-      let inputValue = !type ? parseInt(e?.target.value as string, 10) : null;
+      const inputValue = !type ? parseInt(e?.target.value as string, 10) : null;
 
       setCurrentCart(
         currentCart.map((cartProduct) =>

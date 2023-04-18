@@ -31,6 +31,10 @@ export function MainLayout({
         <meta name='description' content={siteDescription} />
         <meta name='og:description' content={siteDescription} />
         <meta property='og:image' content={siteImage} />
+        <meta
+          name='og:url'
+          // content={`https://shopping-cart-ccrsxx.vercel.app${url ?? ''}`}
+        />
       </Head>
       {children}
     </main>

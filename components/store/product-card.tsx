@@ -59,7 +59,7 @@ export function ProductCard({ productData }: ProductCardProps): JSX.Element {
     <Link href={`/product/${id}`} scroll={false}>
       <a
         className='tab group relative rounded-lg ring-2 ring-border-primary
-                   transition duration-300 hover:ring hover:ring-accent bg-red-400'
+                   transition duration-300 hover:ring hover:ring-accent'
         onClick={delayScroll}
       >
         <div className='transition duration-300 group-hover:brightness-90 group-focus-visible:brightness-90 '>
