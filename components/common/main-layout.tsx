@@ -33,7 +33,7 @@ export function MainLayout({
         <meta property='og:image' content={siteImage} />
         <meta
           name='og:url'
-          // content={`https://shopping-cart-ccrsxx.vercel.app${url ?? ''}`}
+          content={`shopping-cart-next-1tuztzdj9-salsabeal-azzam.vercel.app${url ?? ''}`}
         />
       </Head>
       {children}
